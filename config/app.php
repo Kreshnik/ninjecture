@@ -136,7 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-         Kreshnik\Dbtruncate\DbtruncateServiceProvider::class,
+        Kreshnik\Dbtruncate\DbtruncateServiceProvider::class,
 
         /*
          * Application Service Providers...
