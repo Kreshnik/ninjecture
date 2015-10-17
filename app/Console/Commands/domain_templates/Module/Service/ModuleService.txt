@@ -1,0 +1,49 @@
+<?php
+
+
+
+namespace $VENDOR$\Modules\$MODULE$\Service;
+
+
+use $VENDOR$\Generics\GenericService;
+use $VENDOR$\Modules\$MODULE$\Service\Contract\$NAME$ServiceInterface;
+
+use $VENDOR$\Modules\$MODULE$\Repository\Contract\$NAME$RepositoryInterface;
+
+
+/**
+ * Class $NAME$Service
+ * @package $VENDOR$\Modules\$MODULE$\Service
+ */
+class $NAME$Service extends GenericService implements $NAME$ServiceInterface
+{
+
+	/**
+	 * @param $NAME$RepositoryInterface $repository
+	 */
+	function __construct( $NAME$RepositoryInterface $repository )
+	{
+		parent::__construct();
+		$this->repository = $repository;
+	}
+
+	/**
+	 * @param $request
+	 * @return mixed
+	 */
+	public function insertGetId( $request )
+	{
+		$attributes['created_at'] = $this->now;
+        return $this->repository->insert( $request->input() );
+    }
+
+	/**
+	 * @param $request
+	 * @return mixed
+	 */
+	public function insertBulk( $request )
+	{
+		$attributes = [];
+		return $this->repository->insert( $attributes );
+	}
+}

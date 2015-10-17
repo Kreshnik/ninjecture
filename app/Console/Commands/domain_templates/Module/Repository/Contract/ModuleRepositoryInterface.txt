@@ -1,0 +1,7 @@
+<?php
+
+namespace $VENDOR$\Modules\$MODULE$\Repository\Contract;
+
+interface $NAME$RepositoryInterface {
+
+}

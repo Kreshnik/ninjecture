@@ -1,0 +1,25 @@
+<?php
+
+namespace $VENDOR$\Modules\$MODULE$\Repository;
+
+
+use $VENDOR$\Modules\$MODULE$\Repository\Contract\$NAME$RepositoryInterface;
+use $VENDOR$\Generics\GenericRepository;
+use $VENDOR$\Models\$NAME$;
+
+
+/**
+ * Class $NAME$Repository
+ * @package $VENDOR$\Modules\$MODULE$\Repository
+ */
+class  $NAME$Repository extends GenericRepository implements $NAME$RepositoryInterface
+{
+	/**
+	 * @param $NAME$ $model
+	 */
+	function __construct( $NAME$ $model )
+	{
+		$this->model = $model;
+	}
+
+}

@@ -1,0 +1,11 @@
+<?php namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class $NAME$ extends Model {
+
+	protected $table = '';
+	public $timestamps = true;
+	protected $hidden = ['id'];
+	protected $fillable = [];
+}

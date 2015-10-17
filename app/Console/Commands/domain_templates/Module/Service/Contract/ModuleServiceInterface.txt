@@ -1,0 +1,21 @@
+<?php
+namespace $VENDOR$\Modules\$MODULE$\Service\Contract;
+
+/**
+ * Interface $NAME$ServiceInterface
+ * @package $VENDOR$\Modules\$MODULE$\Service\Contract
+ */
+interface $NAME$ServiceInterface {
+
+	/**
+	 * @param $request
+	 * @return mixed
+	 */
+	public function insertGetId( $request );
+
+	/**
+     * @param $request
+     * @return mixed
+     */
+	public function insertBulk( $request );
+}
