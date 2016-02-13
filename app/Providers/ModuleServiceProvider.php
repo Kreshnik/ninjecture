@@ -1,10 +1,11 @@
-<?php namespace App\Providers;
+<?php
+
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
 class ModuleServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -22,15 +23,14 @@ class ModuleServiceProvider extends ServiceProvider
      *
      * @return void
      */
-
     public function register()
     {
         $this->bindModules($this->modules);
     }
 
-
     /**
-     * Binds module service and repository
+     * Binds module service and repository.
+     *
      * @param $modules List of modules you want to bind.
      */
     private function bindModules($modules)
@@ -38,8 +38,9 @@ class ModuleServiceProvider extends ServiceProvider
         foreach ($modules as $module) {
             $this->bindService($module);
 
-            if (!in_array($module, $this->excludeRepository))
+            if (!in_array($module, $this->excludeRepository)) {
                 $this->bindRepository($module);
+            }
         }
     }
 
@@ -61,6 +62,7 @@ class ModuleServiceProvider extends ServiceProvider
 
     /**
      * Bind service.
+     *
      * @param $module
      */
     private function bindService($module)
@@ -72,6 +74,7 @@ class ModuleServiceProvider extends ServiceProvider
 
     /**
      * Bind repository.
+     *
      * @param $module
      */
     private function bindRepository($module)
@@ -80,5 +83,4 @@ class ModuleServiceProvider extends ServiceProvider
         $repoPath = "App\\Modules\\{$module}\\Repository\\{$module}Repository";
         $this->app->singleton($repoContractPath, $repoPath);
     }
-
 }

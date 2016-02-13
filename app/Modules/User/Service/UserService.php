@@ -1,30 +1,34 @@
-<?php namespace App\Modules\User\Service;
+<?php
 
+namespace App\Modules\User\Service;
+
+use App\Generics\GenericService;
 use App\Modules\User\Repository\Contract\UserRepositoryInterface;
 use App\Modules\User\Service\Contract\UserServiceInterface;
-use App\Generics\GenericService;
 use App\Traits\ResponseTypes;
 use Illuminate\Support\Facades\Hash;
 
 /**
- * Class UserService
- * @package App\Modules\User\Service
+ * Class UserService.
  */
 class UserService extends GenericService implements UserServiceInterface
 {
     use ResponseTypes;
+
     /**
      * @param UserRepositoryInterface $repository
      */
-    function __construct(UserRepositoryInterface $repository)
+    public function __construct(UserRepositoryInterface $repository)
     {
         parent::__construct();
         $this->repository = $repository;
     }
 
     /**
-     * Create user and return user
+     * Create user and return user.
+     *
      * @param $request
+     *
      * @return mixed
      */
     public function insertGetUser($request)
@@ -38,8 +42,10 @@ class UserService extends GenericService implements UserServiceInterface
     }
 
     /**
-     * Map user object fields
+     * Map user object fields.
+     *
      * @param $request
+     *
      * @return array
      */
     private function mapUserFields($request)
@@ -53,6 +59,4 @@ class UserService extends GenericService implements UserServiceInterface
 
         return $attributes;
     }
-
-
 }

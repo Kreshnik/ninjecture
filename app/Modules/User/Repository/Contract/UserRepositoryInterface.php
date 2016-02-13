@@ -2,6 +2,6 @@
 
 namespace App\Modules\User\Repository\Contract;
 
-interface UserRepositoryInterface {
-
+interface UserRepositoryInterface
+{
 }
