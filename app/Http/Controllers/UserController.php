@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Modules\User\Service\Contract\UserServiceInterface;
 use Illuminate\Http\Request;
-use App\Http\Requests;
 
 class UserController extends Controller
 {
@@ -15,6 +14,7 @@ class UserController extends Controller
 
     /**
      * UserController constructor.
+     *
      * @param UserServiceInterface $userService
      */
     public function __construct(UserServiceInterface $userService)
@@ -55,18 +55,19 @@ class UserController extends Controller
 　　　　　　　 l.ヒ'l l　,l_l_ l,'
 　　　　　　　ヽ`''　l / ＿ ヽ
 　　　　　　　　￣ ' l / -ヽ;";
-    return $ninja;
+
+        return $ninja;
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         return $this->userService->insertGetUser($request);
     }
-
 }
